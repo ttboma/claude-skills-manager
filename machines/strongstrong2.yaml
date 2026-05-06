@@ -45,15 +45,19 @@ marketplaces:
     source: github:kepano/obsidian-skills
   - name: superpowers-dev
     source: github:obra/superpowers
+  - name: ttboma-superpowers
+    source: github:ttboma/superpowers
+    note: Personal fork replacing upstream superpowers
 
 # ============================================================
 # Plugins (installed via claude plugin install)
 # Install: claude plugin install <name>
 # ============================================================
 plugins:
-  - name: superpowers@claude-plugins-official
-    version: 5.1.0
-    source: https://github.com/obra/superpowers
+  - name: superpowers@ttboma-superpowers
+    version: 5.1.0+fork
+    source: https://github.com/ttboma/superpowers
+    note: Personal fork replacing superpowers@claude-plugins-official
     skills:
       - brainstorming
       - dispatching-parallel-agents
@@ -61,6 +65,7 @@ plugins:
       - finishing-a-development-branch
       - receiving-code-review
       - requesting-code-review
+      - spec-test-driven-development    # NEW — spec→features→tests→TDD workflow
       - subagent-driven-development
       - systematic-debugging
       - test-driven-development
@@ -254,6 +259,17 @@ manual_skills:
     path: ~/.claude/skills/nano-banana
     source: https://github.com/kkoppenhaver/cc-nano-banana
     description: Image generation via Nano Banana (Gemini CLI)
+
+# ============================================================
+# CLI tools (installed separately, used by skills)
+# ============================================================
+cli_tools:
+  - name: markitdown
+    version: 0.1.5
+    source: https://github.com/microsoft/markitdown
+    install_method: "pipx install 'markitdown[all]'"
+    description: Convert PDF/Word/PowerPoint/etc to Markdown for LLM consumption
+    used_by: spec-test-driven-development (Phase 1 spec reading)
 
 # ============================================================
 # Built-in skills (part of Claude Code itself, not installable)
