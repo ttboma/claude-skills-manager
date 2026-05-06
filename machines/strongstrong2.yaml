@@ -10,6 +10,29 @@ machine:
   claude_code_version: 2.1.104
 
 # ============================================================
+# Linked accounts
+# ============================================================
+accounts:
+  gws:
+    config: ~/.config/gws/accounts.json
+    default: ttboma@gmail.com
+    accounts:
+      - email: ttboma@gmail.com
+        added: 2026-03-05
+        credentials: ~/.config/gws/credentials.dHRib21hQGdtYWlsLmNvbQ.enc
+        token_cache: ~/.config/gws/token_cache.dHRib21hQGdtYWlsLmNvbQ.json
+      - email: shiehyuehchang@gmail.com
+        added: 2026-03-05
+        credentials: ~/.config/gws/credentials.c2hpZWh5dWVoY2hhbmdAZ21haWwuY29t.enc
+        token_cache: ~/.config/gws/token_cache.c2hpZWh5dWVoY2hhbmdAZ21haWwuY29t.json
+
+  notebooklm:
+    auth_method: browser-based (Playwright)
+    auth_state: ~/.claude/skills/notebooklm/data/browser_state/
+    authenticated_at: 2026-03-03
+    note: Account not stored explicitly; uses whichever Google account was logged in during browser auth
+
+# ============================================================
 # Marketplaces (plugin registries)
 # Install: claude plugin marketplace add github:<repo>
 # ============================================================
