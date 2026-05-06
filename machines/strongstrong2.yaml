@@ -247,9 +247,12 @@ local_skills:
 manual_skills:
   - name: notebooklm
     path: ~/.claude/skills/notebooklm
+    source: https://github.com/PleasePrompto/notebooklm-skill
+    install_method: "git clone https://github.com/PleasePrompto/notebooklm-skill ~/.claude/skills/notebooklm"
     description: Query Google NotebookLM notebooks from Claude Code
   - name: nano-banana
     path: ~/.claude/skills/nano-banana
+    source: none (hand-created single-file skill)
     description: Image generation via Nano Banana (Gemini CLI)
 
 # ============================================================
