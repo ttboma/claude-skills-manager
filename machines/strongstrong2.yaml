@@ -1,0 +1,225 @@
+# strongstrong2 — MacBook Air
+# Snapshot: 2026-05-06
+# Claude Code: 2.1.104
+
+machine:
+  hostname: strongstrong2
+  type: MacBook Air
+  os: macOS 26.3
+  arch: arm64
+  claude_code_version: 2.1.104
+
+# ============================================================
+# Marketplaces (plugin registries)
+# Install: claude plugin marketplace add github:<repo>
+# ============================================================
+marketplaces:
+  - name: claude-plugins-official
+    source: github:anthropics/claude-plugins-official
+  - name: anthropic-agent-skills
+    source: github:anthropics/skills
+  - name: obsidian-skills
+    source: github:kepano/obsidian-skills
+  - name: superpowers-dev
+    source: github:obra/superpowers
+
+# ============================================================
+# Plugins (installed via claude plugin install)
+# Install: claude plugin install <name>
+# ============================================================
+plugins:
+  - name: superpowers@claude-plugins-official
+    version: 5.1.0
+    source: https://github.com/obra/superpowers
+    skills:
+      - brainstorming
+      - dispatching-parallel-agents
+      - executing-plans
+      - finishing-a-development-branch
+      - receiving-code-review
+      - requesting-code-review
+      - subagent-driven-development
+      - systematic-debugging
+      - test-driven-development
+      - using-git-worktrees
+      - using-superpowers
+      - verification-before-completion
+      - writing-plans
+      - writing-skills
+    deprecated_aliases:
+      - brainstorm
+      - execute-plan
+      - write-plan
+
+  - name: obsidian@obsidian-skills
+    version: 1.0.1
+    source: https://github.com/kepano/obsidian-skills
+    skills:
+      - defuddle
+      - json-canvas
+      - obsidian-bases
+      - obsidian-cli
+      - obsidian-markdown
+
+  - name: clangd-lsp@claude-plugins-official
+    version: 1.0.0
+    source: https://github.com/anthropics/claude-plugins-official
+    provides: LSP server for C/C++ intellisense (no skills)
+
+# ============================================================
+# Standalone skills (~/.claude/skills/)
+# These come from the anthropic-agent-skills marketplace.
+# Install: claude plugin marketplace add github:anthropics/skills
+# ============================================================
+
+# 107 symlinked skills (-> ~/.agents/skills/)
+symlinked_skills:
+  source: anthropic-agent-skills marketplace (github:anthropics/skills)
+  target: ~/.agents/skills/
+
+  gws_core:  # 47
+    - gws-admin
+    - gws-admin-reports
+    - gws-alertcenter
+    - gws-apps-script
+    - gws-apps-script-push
+    - gws-calendar
+    - gws-calendar-agenda
+    - gws-calendar-insert
+    - gws-chat
+    - gws-chat-send
+    - gws-classroom
+    - gws-cloudidentity
+    - gws-docs
+    - gws-docs-write
+    - gws-drive
+    - gws-drive-upload
+    - gws-events
+    - gws-events-renew
+    - gws-events-subscribe
+    - gws-forms
+    - gws-gmail
+    - gws-gmail-send
+    - gws-gmail-triage
+    - gws-gmail-watch
+    - gws-groupssettings
+    - gws-keep
+    - gws-licensing
+    - gws-meet
+    - gws-modelarmor
+    - gws-modelarmor-create-template
+    - gws-modelarmor-sanitize-prompt
+    - gws-modelarmor-sanitize-response
+    - gws-people
+    - gws-reseller
+    - gws-shared
+    - gws-sheets
+    - gws-sheets-append
+    - gws-sheets-read
+    - gws-slides
+    - gws-tasks
+    - gws-vault
+    - gws-workflow
+    - gws-workflow-email-to-task
+    - gws-workflow-file-announce
+    - gws-workflow-meeting-prep
+    - gws-workflow-standup-report
+    - gws-workflow-weekly-digest
+
+  gws_personas:  # 10
+    - persona-content-creator
+    - persona-customer-support
+    - persona-event-coordinator
+    - persona-exec-assistant
+    - persona-hr-coordinator
+    - persona-it-admin
+    - persona-project-manager
+    - persona-researcher
+    - persona-sales-ops
+    - persona-team-lead
+
+  gws_recipes:  # 50
+    - recipe-audit-external-sharing
+    - recipe-backup-sheet-as-csv
+    - recipe-batch-invite-to-event
+    - recipe-batch-rename-files
+    - recipe-batch-reply-to-emails
+    - recipe-block-focus-time
+    - recipe-bulk-download-folder
+    - recipe-cancel-and-notify
+    - recipe-collect-form-responses
+    - recipe-compare-sheet-tabs
+    - recipe-copy-sheet-for-new-month
+    - recipe-create-classroom-course
+    - recipe-create-doc-from-template
+    - recipe-create-events-from-sheet
+    - recipe-create-expense-tracker
+    - recipe-create-feedback-form
+    - recipe-create-gmail-filter
+    - recipe-create-meet-space
+    - recipe-create-presentation
+    - recipe-create-shared-drive
+    - recipe-create-task-list
+    - recipe-create-vacation-responder
+    - recipe-deploy-apps-script
+    - recipe-draft-email-from-doc
+    - recipe-email-drive-link
+    - recipe-find-free-time
+    - recipe-find-large-files
+    - recipe-forward-labeled-emails
+    - recipe-generate-report-from-sheet
+    - recipe-label-and-archive-emails
+    - recipe-log-deal-update
+    - recipe-organize-drive-folder
+    - recipe-plan-weekly-schedule
+    - recipe-post-mortem-setup
+    - recipe-reschedule-meeting
+    - recipe-review-meet-participants
+    - recipe-review-overdue-tasks
+    - recipe-save-email-attachments
+    - recipe-save-email-to-doc
+    - recipe-schedule-recurring-event
+    - recipe-search-and-export-emails
+    - recipe-send-personalized-emails
+    - recipe-send-team-announcement
+    - recipe-share-doc-and-notify
+    - recipe-share-event-materials
+    - recipe-share-folder-with-team
+    - recipe-sync-contacts-to-sheet
+    - recipe-transfer-file-ownership
+    - recipe-triage-security-alerts
+    - recipe-watch-drive-changes
+
+# 18 local directory skills (real dirs, not symlinks)
+local_skills:
+  source: anthropic-agent-skills marketplace (github:anthropics/skills)
+  skills:
+    - algorithmic-art
+    - brand-guidelines
+    - canvas-design
+    - doc-coauthoring
+    - docx
+    - frontend-design
+    - internal-comms
+    - mcp-builder
+    - nano-banana
+    - notebooklm
+    - pdf
+    - pptx
+    - skill-creator
+    - slack-gif-creator
+    - theme-factory
+    - web-artifacts-builder
+    - webapp-testing
+    - xlsx
+
+# ============================================================
+# Built-in skills (part of Claude Code itself, not installable)
+# ============================================================
+builtin_skills:
+  - claude-api
+  - keybindings-help
+  - loop
+  - schedule
+  - simplify
+  - update-config
