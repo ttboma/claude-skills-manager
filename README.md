@@ -36,10 +36,10 @@ Diff any two YAML files to see what one machine has that another doesn't.
 
 ## Sources
 
-| Source | What it provides |
-|---|---|
-| [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | clangd-lsp plugin |
-| [anthropics/skills](https://github.com/anthropics/skills) | 125 standalone skills (GWS, recipes, personas, design, dev tools) |
-| [obra/superpowers](https://github.com/obra/superpowers) | 14 dev workflow skills (TDD, debugging, planning, code review) |
-| [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills) | 5 Obsidian vault skills |
-| Claude Code built-in | 6 utility skills (loop, schedule, simplify, etc.) |
+| Source | What it provides | Installed on |
+|---|---|---|
+| [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | clangd-lsp plugin | strongstrong2 |
+| [anthropics/skills](https://github.com/anthropics/skills) | 125 standalone skills (GWS, recipes, personas, design, dev tools) | strongstrong2 |
+| [obra/superpowers](https://github.com/obra/superpowers) | 14 dev workflow skills (TDD, debugging, planning, code review) | strongstrong2 |
+| [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills) | 5 Obsidian vault skills | strongstrong2 |
+| Claude Code built-in | 6 utility skills (loop, schedule, simplify, etc.) | strongstrong2 |
