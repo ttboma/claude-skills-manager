@@ -1,0 +1,139 @@
+# atctlc04 — Andes Technology Linux workstation
+# Snapshot: 2026-05-07
+# Claude Code: 2.1.129
+
+machine:
+  hostname: atctlc04
+  type: Linux workstation
+  os: Arch Linux (rolling)
+  kernel: 6.12.1-arch1-1
+  arch: x86_64
+  claude_code_version: 2.1.129
+
+# ============================================================
+# Linked accounts
+# ============================================================
+accounts:
+  # No GWS accounts on this machine (~/.config/gws/ does not exist).
+  # No NotebookLM auth state (notebooklm skill not installed).
+  none: true
+
+# ============================================================
+# Marketplaces (plugin registries)
+# Install: claude plugin marketplace add github:<repo>
+# ============================================================
+marketplaces:
+  - name: claude-plugins-official
+    source: github:anthropics/claude-plugins-official
+
+  # NOTE: a "kepano" marketplace was previously registered (the obsidian
+  # plugin below was installed from it), but it is no longer in
+  # ~/.claude/plugins/known_marketplaces.json and `claude plugin marketplace list`
+  # does not show it. The cached plugin still exists at
+  # ~/.claude/plugins/cache/kepano/obsidian-skills/1.0.1 and is still
+  # listed in installed_plugins.json, but is currently disabled.
+
+# ============================================================
+# Plugins (installed via claude plugin install)
+# Install: claude plugin install <name>
+# ============================================================
+plugins:
+  - name: superpowers@claude-plugins-official
+    version: 5.1.0
+    enabled: true
+    source: https://github.com/obra/superpowers
+    installed_at: 2026-03-29
+    last_updated: 2026-05-06
+    git_commit: eafe962b18f6c5dc70fb7c8cc7e83e61f4cdde06
+    skills:
+      - brainstorming
+      - dispatching-parallel-agents
+      - executing-plans
+      - finishing-a-development-branch
+      - receiving-code-review
+      - requesting-code-review
+      - subagent-driven-development
+      - systematic-debugging
+      - test-driven-development
+      - using-git-worktrees
+      - using-superpowers
+      - verification-before-completion
+      - writing-plans
+      - writing-skills
+
+  - name: clangd-lsp@claude-plugins-official
+    version: 1.0.0
+    enabled: true
+    source: https://github.com/anthropics/claude-plugins-official
+    installed_at: 2026-03-31
+    provides: LSP server for C/C++ intellisense (no skills)
+
+  - name: pyright-lsp@claude-plugins-official
+    version: 1.0.0
+    enabled: true
+    source: https://github.com/anthropics/claude-plugins-official
+    installed_at: 2026-04-01
+    provides: LSP server for Python intellisense (no skills)
+
+  - name: obsidian@kepano
+    version: 1.0.1
+    enabled: false  # disabled in settings.json; marketplace "kepano" no longer registered
+    source: https://github.com/kepano/obsidian-skills
+    installed_at: 2026-04-03
+    git_commit: fa1e131a014576ff8f8919f191a7ca8d8fded39b
+    skills:
+      - defuddle
+      - json-canvas
+      - obsidian-bases
+      - obsidian-cli
+      - obsidian-markdown
+
+# ============================================================
+# Symlinked skills (~/.claude/skills/ -> ~/toolchain-skills/skills/)
+# Source: Andes internal Gitea (gitea.andestech.com/jasonhch/toolchain-skills)
+# Forks present locally: jasonhch (upstream), johns575 (user's fork)
+# These are domain-specific BSV/copilot toolchain skills, not from any
+# Claude marketplace — symlinked manually from the local clone.
+# ============================================================
+symlinked_skills:
+  count: 3
+  source: https://gitea.andestech.com/jasonhch/toolchain-skills
+  target: ~/toolchain-skills/skills/
+  branch: master
+  last_commit: e12565e95041cced492b7eb2d775c0e4701de306
+
+  toolchain:  # 3
+    - build-test-copilot          # build Andes copilot package via BSV build system
+    - build-test-copilot-workflow # full copilot+vsim cycle-accurate pipeline
+    - develop-bsv                 # pre-commit/pre-push checks for BSV repo
+
+# ============================================================
+# Local directory skills (~/.claude/skills/, real dirs not symlinks)
+# ============================================================
+local_skills:
+  # None on this machine — the anthropics/skills marketplace is not
+  # registered here. All entries under ~/.claude/skills/ are symlinks
+  # to ~/toolchain-skills/skills/ (see symlinked_skills above).
+  none: true
+
+# ============================================================
+# Manually installed skills (not from any marketplace/plugin)
+# ============================================================
+manual_skills:
+  # None on this machine — notebooklm and nano-banana are not installed.
+  none: true
+
+# ============================================================
+# Built-in skills (part of Claude Code itself, not installable)
+# ============================================================
+builtin_skills:
+  - claude-api
+  - keybindings-help
+  - loop
+  - schedule
+  - simplify
+  - update-config
+  - fewer-permission-prompts  # observed available in 2.1.129
+  - init                      # observed available in 2.1.129
+  - review                    # observed available in 2.1.129
+  - security-review           # observed available in 2.1.129

@@ -8,18 +8,20 @@ Track Claude Code plugins, skills, and marketplaces across multiple machines.
 |---|---|---|---|
 | [googleworkspace/cli](https://github.com/googleworkspace/cli) | `~/.agents` skill installer (separate from Claude plugin system). Symlinks into `~/.claude/skills/`. Lock file: `~/.agents/.skill-lock.json` | 107 skills (GWS core, recipes, personas) | strongstrong2 |
 | [anthropics/skills](https://github.com/anthropics/skills) | Claude plugin marketplace: `claude plugin marketplace add github:anthropics/skills` | 16 skills (document processing, design, dev tools) | strongstrong2 |
-| [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | Claude plugin marketplace (built-in): `claude plugin install clangd-lsp@claude-plugins-official` | clangd-lsp plugin (LSP, no skills) | strongstrong2 |
-| [obra/superpowers](https://github.com/obra/superpowers) | Claude plugin marketplace: `claude plugin install superpowers@claude-plugins-official` | 14 dev workflow skills (TDD, debugging, planning, code review) | strongstrong2 |
-| [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills) | Claude plugin marketplace: `claude plugin install obsidian@obsidian-skills` | 5 Obsidian vault skills | strongstrong2 |
+| [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | Claude plugin marketplace (built-in): `claude plugin install <name>@claude-plugins-official` | clangd-lsp, pyright-lsp plugins (LSP servers, no skills) | strongstrong2, atctlc04 |
+| [obra/superpowers](https://github.com/obra/superpowers) | Claude plugin marketplace: `claude plugin install superpowers@claude-plugins-official` | 14 dev workflow skills (TDD, debugging, planning, code review) | strongstrong2, atctlc04 |
+| [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills) | Claude plugin marketplace: `claude plugin install obsidian@obsidian-skills` | 5 Obsidian vault skills | strongstrong2, atctlc04 (disabled) |
 | [PleasePrompto/notebooklm-skill](https://github.com/PleasePrompto/notebooklm-skill) | Manual: `git clone` into `~/.claude/skills/notebooklm` | 1 skill (notebooklm) | strongstrong2 |
 | [kkoppenhaver/cc-nano-banana](https://github.com/kkoppenhaver/cc-nano-banana) | Manual: copied into `~/.claude/skills/nano-banana/` | 1 skill (nano-banana, Gemini CLI image gen) | strongstrong2 |
-| Claude Code built-in | Ships with Claude Code binary, not installable/removable | 6 utility skills (loop, schedule, simplify, etc.) | strongstrong2 |
+| [andestech/toolchain-skills](https://gitea.andestech.com/jasonhch/toolchain-skills) (internal Gitea) | Manual: `git clone` then symlink each skill into `~/.claude/skills/` | 3 skills (build-test-copilot, build-test-copilot-workflow, develop-bsv — Andes BSV/copilot toolchain) | atctlc04 |
+| Claude Code built-in | Ships with Claude Code binary, not installable/removable | 6+ utility skills (loop, schedule, simplify, etc.; newer versions add init, review, security-review, fewer-permission-prompts) | strongstrong2, atctlc04 |
 
 ## Structure
 
 ```
 machines/
   strongstrong2.yaml   # MacBook Air
+  atctlc04.yaml        # Andes Linux workstation
   <hostname>.yaml      # Add more machines here
 ```
 
