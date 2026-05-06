@@ -67,14 +67,15 @@ plugins:
     provides: LSP server for C/C++ intellisense (no skills)
 
 # ============================================================
-# Standalone skills (~/.claude/skills/)
-# These come from the anthropic-agent-skills marketplace.
-# Install: claude plugin marketplace add github:anthropics/skills
+# Symlinked skills (~/.claude/skills/ -> ~/.agents/skills/)
+# Source: googleworkspace/cli (https://github.com/googleworkspace/cli)
+# These are NOT from the anthropic-agent-skills marketplace.
+# They were installed via a separate ~/.agents mechanism.
+# Lock file: ~/.agents/.skill-lock.json
 # ============================================================
-
-# 107 symlinked skills (-> ~/.agents/skills/)
 symlinked_skills:
-  source: anthropic-agent-skills marketplace (github:anthropics/skills)
+  count: 107
+  source: https://github.com/googleworkspace/cli
   target: ~/.agents/skills/
 
   gws_core:  # 47
@@ -190,28 +191,43 @@ symlinked_skills:
     - recipe-triage-security-alerts
     - recipe-watch-drive-changes
 
-# 18 local directory skills (real dirs, not symlinks)
+# ============================================================
+# Local directory skills (~/.claude/skills/, real dirs not symlinks)
+# Source: anthropic-agent-skills marketplace (github:anthropics/skills)
+# Install: claude plugin marketplace add github:anthropics/skills
+# ============================================================
 local_skills:
-  source: anthropic-agent-skills marketplace (github:anthropics/skills)
-  skills:
+  source: https://github.com/anthropics/skills
+  install_method: "claude plugin marketplace add github:anthropics/skills"
+  document_skills:  # 4
+    - docx
+    - pdf
+    - pptx
+    - xlsx
+  example_skills:  # 12
     - algorithmic-art
     - brand-guidelines
     - canvas-design
     - doc-coauthoring
-    - docx
     - frontend-design
     - internal-comms
     - mcp-builder
-    - nano-banana
-    - notebooklm
-    - pdf
-    - pptx
     - skill-creator
     - slack-gif-creator
     - theme-factory
     - web-artifacts-builder
     - webapp-testing
-    - xlsx
+
+# ============================================================
+# Manually installed skills (not from any marketplace/plugin)
+# ============================================================
+manual_skills:
+  - name: notebooklm
+    path: ~/.claude/skills/notebooklm
+    description: Query Google NotebookLM notebooks from Claude Code
+  - name: nano-banana
+    path: ~/.claude/skills/nano-banana
+    description: Image generation via Nano Banana (Gemini CLI)
 
 # ============================================================
 # Built-in skills (part of Claude Code itself, not installable)

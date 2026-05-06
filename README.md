@@ -38,8 +38,10 @@ Diff any two YAML files to see what one machine has that another doesn't.
 
 | Source | What it provides | Installed on |
 |---|---|---|
+| [googleworkspace/cli](https://github.com/googleworkspace/cli) | 107 skills (GWS core, recipes, personas) via ~/.agents | strongstrong2 |
+| [anthropics/skills](https://github.com/anthropics/skills) | 16 skills (document processing, design, dev tools) | strongstrong2 |
 | [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | clangd-lsp plugin | strongstrong2 |
-| [anthropics/skills](https://github.com/anthropics/skills) | 125 standalone skills (GWS, recipes, personas, design, dev tools) | strongstrong2 |
 | [obra/superpowers](https://github.com/obra/superpowers) | 14 dev workflow skills (TDD, debugging, planning, code review) | strongstrong2 |
 | [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills) | 5 Obsidian vault skills | strongstrong2 |
+| Manual install | 2 skills (notebooklm, nano-banana) | strongstrong2 |
 | Claude Code built-in | 6 utility skills (loop, schedule, simplify, etc.) | strongstrong2 |
