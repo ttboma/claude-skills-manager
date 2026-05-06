@@ -252,7 +252,7 @@ manual_skills:
     description: Query Google NotebookLM notebooks from Claude Code
   - name: nano-banana
     path: ~/.claude/skills/nano-banana
-    source: none (hand-created single-file skill)
+    source: https://github.com/kkoppenhaver/cc-nano-banana
     description: Image generation via Nano Banana (Gemini CLI)
 
 # ============================================================
